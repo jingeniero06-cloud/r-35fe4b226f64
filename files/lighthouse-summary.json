@@ -1,0 +1,67 @@
+[
+  {
+    "label": "Home",
+    "url": "https://themightymo.com/",
+    "perf": 47,
+    "a11y": 93,
+    "bp": 77,
+    "seo": 92,
+    "lcp_ms": 6870,
+    "tbt_ms": 909,
+    "cls": 0.08745908574860875,
+    "fcp_ms": 3208,
+    "bytes": 2876457
+  },
+  {
+    "label": "SEO services",
+    "url": "https://themightymo.com/seo-services/",
+    "perf": 61,
+    "a11y": 87,
+    "bp": 77,
+    "seo": 92,
+    "lcp_ms": 3425,
+    "tbt_ms": 1088,
+    "cls": 0.09137409177628282,
+    "fcp_ms": 2630,
+    "bytes": 1805024
+  },
+  {
+    "label": "WordPress design",
+    "url": "https://themightymo.com/wordpress-website-design-services/",
+    "perf": 60,
+    "a11y": 93,
+    "bp": 77,
+    "seo": 92,
+    "lcp_ms": 7652,
+    "tbt_ms": 289,
+    "cls": 0.08757656470689905,
+    "fcp_ms": 2483,
+    "bytes": 2877021
+  },
+  {
+    "label": "Minneapolis SEO",
+    "url": "https://themightymo.com/seo-services/minneapolis/",
+    "perf": 39,
+    "a11y": 90,
+    "bp": 77,
+    "seo": 92,
+    "lcp_ms": 15496,
+    "tbt_ms": 1066,
+    "cls": 0.1679450182260024,
+    "fcp_ms": 2677,
+    "bytes": 2206997
+  },
+  {
+    "label": "About",
+    "url": "https://themightymo.com/about-us/",
+    "perf": 37,
+    "a11y": 90,
+    "bp": 77,
+    "seo": 92,
+    "lcp_ms": 15421,
+    "tbt_ms": 1130,
+    "cls": 0.1522171951898238,
+    "fcp_ms": 2841,
+    "bytes": 2103689
+  }
+]

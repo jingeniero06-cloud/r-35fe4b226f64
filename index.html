@@ -1,0 +1,285 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>SEO Audit · The Mighty Mo! Design Co.</title>
+<meta name="description" content="Full SEO audit of themightymo.com, 20 October 2026.">
+<style>
+:root { --ink:#0F172A; --muted:#64748B; --line:#E2E8F0; --soft:#F8FAFC; --navy:#0B1F3A; --accent:#2563EB;
+        --good:#16A34A; --warn:#D97706; --bad:#DC2626; --info:#2563EB; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: #E5E7EB; }
+body { font-family: "Segoe UI", "Inter", system-ui, sans-serif; color: var(--ink); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.top { display: flex; justify-content: space-between; align-items: center; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
+.kicker { color: var(--accent); font-weight: 700; }
+.brand { color: var(--muted); }
+h2 { font-size: 30px; font-weight: 700; letter-spacing: -.02em; margin: 8px 0 22px; line-height: 1.15; }
+h3 { font-size: 14px; font-weight: 700; margin: 0 0 10px; }
+.body { flex: 1; min-height: 0; }
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
+.callout + h3 { margin-top: 20px; }
+.legend i.dash { width: 16px; height: 0; border-top: 2px dashed var(--muted); border-radius: 0; vertical-align: 3px; }
+.split.wide-left { grid-template-columns: 1.35fr 1fr; }
+.panel { background: var(--soft); border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; }
+.cap { font-size: 10.5px; color: var(--muted); margin-top: 8px; line-height: 1.4; }
+.cap.center { text-align: center; margin-top: 16px; }
+.muted { color: var(--muted); font-size: 13px; }
+code, .mono { font-family: "Cascadia Mono", Consolas, monospace; font-size: .86em; }
+code { background: #F1F5F9; padding: 1px 5px; border-radius: 4px; }
+
+
+.lead .big { font-size: 17px; line-height: 1.5; margin-bottom: 18px; }
+.nums { padding-left: 20px; font-size: 14px; line-height: 1.5; }
+.nums li { margin-bottom: 10px; }
+.kpis { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-content: start; }
+.kpi { border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; border-top: 4px solid var(--line); }
+.kpi b { display: block; font-size: 34px; letter-spacing: -.02em; }
+.kpi span { color: var(--muted); font-size: 12.5px; }
+.kpi.good { border-top-color: var(--good); } .kpi.good b { color: var(--good); }
+.kpi.bad { border-top-color: var(--bad); } .kpi.bad b { color: var(--bad); }
+.kpi.warn { border-top-color: var(--warn); } .kpi.warn b { color: var(--warn); }
+
+.pill { display: inline-block; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 999px; white-space: nowrap; }
+.pill.good { background: #DCFCE7; color: #166534; } .pill.warn { background: #FEF3C7; color: #92400E; }
+.pill.bad { background: #FEE2E2; color: #991B1B; } .pill.info { background: #DBEAFE; color: #1E40AF; }
+
+.scorecard { display: grid; gap: 0; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.sc-row { display: grid; grid-template-columns: 200px 120px 1fr; align-items: center; gap: 16px; padding: 15px 22px; border-bottom: 1px solid var(--line); }
+.sc-row:last-child { border-bottom: 0; } .sc-row:nth-child(odd) { background: var(--soft); }
+.sc-name { font-weight: 700; font-size: 15px; } .sc-note { font-size: 13.5px; color: #334155; }
+
+.pgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.pcard { display: flex; gap: 12px; border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; }
+.pnum { flex: 0 0 30px; height: 30px; border-radius: 50%; background: var(--navy); color: #fff; font-weight: 700; display: grid; place-items: center; font-size: 14px; }
+.ptitle { font-weight: 700; font-size: 14.5px; margin-bottom: 6px; }
+.tag { font-size: 10px; font-weight: 600; color: var(--muted); border: 1px solid var(--line); border-radius: 4px; padding: 1px 6px; margin-left: 4px; vertical-align: middle; }
+.prob { font-size: 12px; color: #475569; line-height: 1.45; margin-bottom: 6px; }
+.fix { font-size: 12px; line-height: 1.45; margin-bottom: 8px; }
+.ie .pill { font-size: 10px; margin-right: 4px; }
+
+.chart { width: 100%; height: auto; }
+.chart .grid { stroke: var(--line); stroke-width: 1; } .chart .target { stroke: var(--muted); stroke-dasharray: 4 4; }
+.chart .axis { font-size: 11px; fill: var(--muted); } .chart .val { font-size: 11px; font-weight: 700; fill: var(--bad); }
+.legend { display: flex; gap: 16px; font-size: 11px; color: var(--muted); margin-top: 4px; }
+.legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 5px; vertical-align: -1px; }
+
+.tbl { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+.tbl th { text-align: left; font-size: 10.5px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); padding: 8px 10px; border-bottom: 2px solid var(--line); }
+.tbl td { padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.tbl .num { text-align: right; white-space: nowrap; } .tbl td.bad { color: var(--bad); font-weight: 700; } .tbl td.warn { color: var(--warn); font-weight: 700; }
+.tbl.dense td { padding: 6.5px 10px; font-size: 12px; line-height: 1.35; }
+.tbl td.mono { font-size: 11px; word-break: break-all; }
+
+.callout { border-left: 4px solid var(--info); background: var(--soft); border-radius: 0 10px 10px 0; padding: 12px 16px; margin-top: 14px; font-size: 12.5px; line-height: 1.5; }
+.callout b { display: block; margin-bottom: 3px; font-size: 13px; }
+.callout.bad { border-left-color: var(--bad); background: #FEF2F2; } .callout.warn { border-left-color: var(--warn); background: #FFFBEB; }
+
+.hbars { display: grid; gap: 9px; }
+.hb { display: flex; align-items: center; gap: 10px; font-size: 12px; }
+.hl { flex: 0 0 auto; color: #334155; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ht { flex: 1; height: 14px; background: #fff; border: 1px solid var(--line); border-radius: 7px; overflow: hidden; }
+.hf { display: block; height: 100%; border-radius: 7px; }
+.hf.good { background: var(--good); } .hf.warn { background: var(--warn); } .hf.bad { background: var(--bad); } .hf.info { background: var(--info); }
+.hv { flex: 0 0 64px; text-align: right; font-weight: 700; font-size: 12px; }
+
+.checks { list-style: none; font-size: 13px; line-height: 1.5; }
+.checks li { padding-left: 20px; position: relative; margin-bottom: 9px; }
+.checks li::before { content: ""; position: absolute; left: 0; top: 6px; width: 9px; height: 9px; border-radius: 2px; background: var(--accent); }
+
+.stats3, .stats4 { display: grid; gap: 12px; margin-bottom: 6px; }
+.stats3 { grid-template-columns: repeat(3, 1fr); } .stats4 { grid-template-columns: repeat(4, 1fr); margin-bottom: 18px; }
+.stats3 div, .stats4 div { border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; }
+.stats3 b, .stats4 b { display: block; font-size: 24px; } .stats3 span, .stats4 span { font-size: 11.5px; color: var(--muted); }
+.stats4 .good b { color: var(--good); } .stats4 .warn b { color: var(--warn); }
+
+.roadmap { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.phase { border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; border-top: 5px solid var(--accent); }
+.phase:nth-child(1) { border-top-color: var(--bad); } .phase:nth-child(2) { border-top-color: var(--warn); } .phase:nth-child(3) { border-top-color: var(--good); }
+.ph-when { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+.ph-name { font-size: 19px; font-weight: 700; margin: 4px 0 12px; }
+.phase ul { list-style: none; font-size: 13px; line-height: 1.45; }
+.phase li { padding: 7px 0 7px 22px; border-bottom: 1px dashed var(--line); position: relative; }
+.phase li:last-child { border-bottom: 0; }
+.phase li::before { content: ""; position: absolute; left: 0; top: 11px; width: 12px; height: 12px; border: 2px solid #94A3B8; border-radius: 3px; }
+
+.wgrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 22px; }
+.wk { border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; border-left: 4px solid var(--good); }
+.wk b { display: block; font-size: 22px; } .wk span { font-size: 12px; color: var(--muted); }
+.method { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.method p { font-size: 12.5px; line-height: 1.55; color: #334155; }
+html { scroll-behavior: smooth; scroll-padding-top: 64px; }
+html, body { background: #fff; overflow-x: hidden; }
+body { line-height: 1.5; }
+.split > *, .pgrid > *, .kpis > *, .roadmap > *, .method > *, .wgrid > *, .stats3 > *, .stats4 > *, .finding > *, .sc-row > * { min-width: 0; }
+code, .mono, .callout, .prob, .fix, .sc-note { overflow-wrap: anywhere; }
+.slide { all: unset; }
+.wrap { max-width: 1160px; margin: 0 auto; padding: 0 28px; }
+.navbar { position: sticky; top: 0; z-index: 10; background: rgba(11,31,58,.97); backdrop-filter: blur(6px); }
+.navbar .wrap { display: flex; align-items: center; gap: 22px; height: 56px; }
+.navbar .logo { color: #fff; font-weight: 700; white-space: nowrap; font-size: 14px; }
+.navbar .logo span { color: #93C5FD; font-weight: 600; }
+.navbar nav { display: flex; gap: 2px; overflow-x: auto; scrollbar-width: none; }
+.navbar nav::-webkit-scrollbar { display: none; }
+.navbar nav a { color: #CBD5E1; text-decoration: none; font-size: 13px; padding: 7px 10px; border-radius: 6px; white-space: nowrap; }
+.navbar nav a:hover, .navbar nav a.on { background: rgba(255,255,255,.1); color: #fff; }
+.hero { background: var(--navy); color: #fff; position: relative; overflow: hidden; padding: 84px 0 64px; }
+.hero::after { content: ""; position: absolute; right: -180px; top: -200px; width: 520px; height: 520px; border-radius: 50%; border: 70px solid rgba(37,99,235,.18); }
+.hero .kick { color: #93C5FD; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; font-size: 13px; }
+.hero h1 { font-size: clamp(34px, 5.4vw, 58px); line-height: 1.05; letter-spacing: -.03em; margin: 14px 0 10px; max-width: 820px; }
+.hero .url { color: #CBD5E1; font-size: 19px; }
+.hero .meta { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 48px; border-top: 1px solid rgba(255,255,255,.18); position: relative; z-index: 1; }
+.hero .meta div { padding: 18px 18px 0 0; } .hero .meta b { display: block; font-size: 32px; } .hero .meta span { color: #94A3B8; font-size: 13px; }
+.hero .foot { margin-top: 40px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; color: #94A3B8; font-size: 13px; }
+.hero .cta { display: inline-block; margin-top: 28px; background: #fff; color: var(--navy); font-weight: 700; padding: 11px 20px; border-radius: 8px; text-decoration: none; font-size: 14px; position: relative; z-index: 1; }
+.sec { padding: 72px 0; } .sec.alt { background: var(--soft); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.kicker { color: var(--accent); font-weight: 700; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+h2 { font-size: clamp(26px, 3.2vw, 34px); margin: 6px 0 28px; }
+h4 { font-size: 15px; margin-bottom: 6px; }
+.intro { font-size: 16px; color: #334155; max-width: 860px; margin-bottom: 22px; }
+.sec.alt .panel { background: #fff; }
+.pcard p { margin: 0; } .pcard h4 { font-size: 15px; }
+.prob, .fix { font-size: 13.5px; }
+.tbl { font-size: 13.5px; } .tbl td.mono { font-size: 12px; }
+.tscroll { overflow-x: auto; }
+.findings { display: grid; gap: 12px; }
+.finding { display: grid; grid-template-columns: 90px 1fr; gap: 16px; background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 16px 20px; }
+.finding p { font-size: 13.5px; color: #334155; margin-top: 4px; } .finding .urls { font-family: "Cascadia Mono", Consolas, monospace; font-size: 12px; color: var(--muted); word-break: break-word; }
+.stats4 .bad b { color: var(--bad); }
+.dls { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+.dl { display: flex; gap: 14px; align-items: center; border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; text-decoration: none; color: var(--ink); transition: border-color .15s, box-shadow .15s; }
+.dl:hover { border-color: var(--accent); box-shadow: 0 6px 20px rgba(15,23,42,.08); }
+.dl-ic { flex: 0 0 48px; height: 48px; border-radius: 10px; background: var(--navy); color: #fff; font-size: 11px; font-weight: 700; display: grid; place-items: center; }
+.dl b { display: block; font-size: 14.5px; } .dl small { color: var(--muted); font-size: 12.5px; }
+footer.site { background: var(--navy); color: #94A3B8; font-size: 13px; padding: 26px 0; }
+footer.site .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+@media (max-width: 900px) {
+  .split, .split.wide-left, .method, .roadmap { grid-template-columns: 1fr; }
+  .pgrid { grid-template-columns: 1fr 1fr; } .wgrid { grid-template-columns: 1fr 1fr; }
+  .hero .meta { grid-template-columns: 1fr 1fr; } .stats4 { grid-template-columns: 1fr 1fr; }
+  .sc-row { grid-template-columns: 1fr auto; } .sc-note { grid-column: 1 / -1; }
+}
+@media (max-width: 600px) {
+  .pgrid, .kpis { grid-template-columns: 1fr; } .finding { grid-template-columns: 1fr; gap: 8px; }
+  .navbar .logo { display: none; } .sec { padding: 52px 0; } .hb .hl { width: 120px !important; }
+}
+@media print { .navbar, .hero .cta { display: none; } .sec { padding: 28px 0; break-inside: avoid-page; } }
+</style></head><body>
+<header class="navbar"><div class="wrap"><div class="logo">Mighty Mo <span>SEO Audit</span></div><nav><a href="#summary">Summary</a><a href="#scorecard">Scorecard</a><a href="#priorities">Top 5</a><a href="#speed">Speed</a><a href="#indexing">Indexing</a><a href="#full-crawl">Full crawl</a><a href="#schema">Schema</a><a href="#trust">Trust</a><a href="#aeo">AI search</a><a href="#content">Content</a><a href="#actions">Actions</a><a href="#roadmap">Roadmap</a><a href="#method">Method</a><a href="#downloads">Downloads</a></nav></div></header>
+<div class="hero"><div class="wrap">
+<div class="kick">Full SEO Audit</div><h1>The Mighty Mo! Design Co.</h1><div class="url">www.themightymo.com</div>
+<div class="meta"><div><b>289</b><span>sitemap URLs</span></div><div><b>5</b><span>templates speed-tested</span></div>
+<div><b>72</b><span>overall health score</span></div><div><b>13</b><span>prioritised actions</span></div></div>
+<a class="cta" href="#downloads">Download the report &amp; files</a>
+<div class="foot"><span>Prepared 20 October 2026</span><span>WordPress · Beaver Builder · Rank Math · Gravity Forms · Cloudflare</span></div>
+</div></div>
+<main><section id="summary" class="sec"><div class="wrap">
+<div class="kicker">Executive summary</div><h2>A capable agency site held back by mobile speed and one bad canonical</h2>
+<div class="split"><div class="lead">
+<p class="big">The Mighty Mo! has a solid technical base — HTTPS, Rank Math sitemaps, rich homepage schema, and consistent Minneapolis NAP.
+The losses concentrate in <b>three fixable areas</b>.</p>
+<ol class="nums">
+<li><b>Mobile speed.</b> Lab Performance 47 with LCP 6.9 s. Desktop is fine (92 / 1.6 s), so this is front-end weight, not hosting.</li>
+<li><b>Index hygiene.</b> A primary WordPress design URL canonicalizes to the homepage, so Google may never rank that service page.</li>
+<li><b>AI / local completeness.</b> No FAQPage or llms.txt; geo landings miss JSON-LD; GBP is absent from Organization sameAs.</li>
+</ol>
+<p class="muted">Overall health score <b>72/100</b>. The five high-priority fixes are mostly WordPress configuration and template changes.</p>
+</div><div class="kpis"><div class="kpi good"><b>289</b><span>Sitemap URLs audited</span></div><div class="kpi bad"><b>47</b><span>Mobile performance, homepage</span></div><div class="kpi bad"><b>6.9 s</b><span>Mobile LCP, homepage</span></div><div class="kpi good"><b>92</b><span>Lighthouse SEO, homepage</span></div><div class="kpi bad"><b>1</b><span>URLs canonicalizing to home</span></div><div class="kpi warn"><b>5</b><span>High-priority fixes</span></div></div></div></div></section><section id="scorecard" class="sec alt"><div class="wrap">
+<div class="kicker">Overview</div><h2>Scorecard by area</h2><div class="scorecard"><div class="sc-row"><div class="sc-name">Technical SEO</div><span class="pill good">Strong</span><div class="sc-note">HTTPS apex, Rank Math sitemap (289 URLs), Brotli, HSTS, server-rendered WP.</div></div><div class="sc-row"><div class="sc-name">Mobile speed</div><span class="pill bad">Critical</span><div class="sc-note">Homepage mobile Performance 47, LCP 6.9 s. Desktop is strong (92 / 1.6 s).</div></div><div class="sc-row"><div class="sc-name">On-page / index hygiene</div><span class="pill warn">Needs work</span><div class="sc-note">1 money URL(s) self-canonical to home; thin metas; dual H1 on SEO hub.</div></div><div class="sc-row"><div class="sc-name">Schema</div><span class="pill good">Good</span><div class="sc-note">Homepage ProfessionalService graph is rich; geo pages and FAQPage lag.</div></div><div class="sc-row"><div class="sc-name">AI search (AEO/GEO)</div><span class="pill warn">Needs work</span><div class="sc-note">Search AI bots 200, but no FAQ/llms.txt; training bots 403 at edge.</div></div><div class="sc-row"><div class="sc-name">Local / E-E-A-T</div><span class="pill good">Good</span><div class="sc-note">NAP consistent; Trustindex reviews; GBP missing from sameAs; founding year inconsistency.</div></div><div class="sc-row"><div class="sc-name">Content</div><span class="pill good">Good</span><div class="sc-note">Agency positioning + case studies; 233 blog posts need hygiene; thin About/Success metas.</div></div></div></div></section><section id="priorities" class="sec"><div class="wrap">
+<div class="kicker">Do these first</div><h2>Top 5 priorities</h2><div class="pgrid"><article class="pcard"><div class="pnum">1</div><div>
+<h4>Fix WordPress design URL canonical + unique on-page <span class="tag">Indexing</span></h4><p class="prob">/wordpress-website-design-services/ returns 200 but canonical, title, and H1 match the homepage.</p><p class="fix"><b>Fix:</b> Self-canonical to that URL; unique title/meta/H1 for WordPress website design intent.</p>
+<div class="ie"><span class="pill bad">Impact High</span> <span class="pill good">Effort Low</span></div></div></article><article class="pcard"><div class="pnum">2</div><div>
+<h4>Cut mobile LCP and third-party JS <span class="tag">Performance</span></h4><p class="prob">Lab mobile LCP is 6.9 s with TBT ~910 ms; ~2.8 MiB transfer; HubSpot, Clarity, GTM, Splide compete on first paint.</p><p class="fix"><b>Fix:</b> Defer marketing tags until idle/interaction; stop Splide autoplay above the fold on mobile; preload LCP image with fetchpriority=high.</p>
+<div class="ie"><span class="pill bad">Impact High</span> <span class="pill warn">Effort Medium</span></div></div></article><article class="pcard"><div class="pnum">3</div><div>
+<h4>Ship FAQPage + llms.txt for AI citations <span class="tag">AI search</span></h4><p class="prob">Homepage is narrative with no FAQ blocks; /llms.txt is not a 200 text/plain discovery file.</p><p class="fix"><b>Fix:</b> Add 5–8 real FAQs on Home and SEO Services with FAQPage JSON-LD; publish /llms.txt summarizing services, NAP, and key URLs.</p>
+<div class="ie"><span class="pill bad">Impact High</span> <span class="pill good">Effort Low</span></div></div></article><article class="pcard"><div class="pnum">4</div><div>
+<h4>JSON-LD on geo pages + GBP in sameAs <span class="tag">Local</span></h4><p class="prob">Minneapolis/St Paul SEO landings lack ProfessionalService JSON-LD; Organization sameAs omits Google Business Profile.</p><p class="fix"><b>Fix:</b> Mirror homepage LocalBusiness/ProfessionalService + areaServed; add Maps/g.page to sameAs; trim GeoCoordinates longitude space.</p>
+<div class="ie"><span class="pill warn">Impact Medium</span> <span class="pill good">Effort Low</span></div></div></article><article class="pcard"><div class="pnum">5</div><div>
+<h4>Rewrite thin metas and fix SEO grammar <span class="tag">On-page</span></h4><p class="prob">About meta is &#x27;About Us&#x27;; Success Stories is &#x27;Customer Success Stories&#x27;; SEO metas say &#x27;services is&#x27;.</p><p class="fix"><b>Fix:</b> 140–160 character benefit-led metas; one H1 on /seo-services/; grammar pass on money pages.</p>
+<div class="ie"><span class="pill warn">Impact Medium</span> <span class="pill good">Effort Low</span></div></div></article></div></div></section><section id="speed" class="sec alt"><div class="wrap">
+<div class="kicker">Performance</div><h2>Mobile speed is the biggest gap</h2>
+<div class="split wide-left">
+<div class="panel"><svg viewBox="0 0 620 300" class="chart"><line x1="40" x2="610" y1="266.0" y2="266.0" class="grid"/><text x="32" y="270.0" class="axis" text-anchor="end">0</text><line x1="40" x2="610" y1="203.0" y2="203.0" class="grid"/><text x="32" y="207.0" class="axis" text-anchor="end">25</text><line x1="40" x2="610" y1="140.0" y2="140.0" class="grid"/><text x="32" y="144.0" class="axis" text-anchor="end">50</text><line x1="40" x2="610" y1="77.0" y2="77.0" class="grid"/><text x="32" y="81.0" class="axis" text-anchor="end">75</text><line x1="40" x2="610" y1="14.0" y2="14.0" class="grid"/><text x="32" y="18.0" class="axis" text-anchor="end">100</text><line x1="40" x2="610" y1="39.2" y2="39.2" class="target"/><rect x="51.0" y="147.6" width="20.0" height="118.4" rx="2" fill="var(--bad)"/><text x="61.0" y="142.6" class="val" text-anchor="middle">47</text><rect x="74.0" y="31.6" width="20.0" height="234.4" rx="2" fill="var(--warn)"/><rect x="97.0" y="72.0" width="20.0" height="194.0" rx="2" fill="var(--info)"/><rect x="120.0" y="34.2" width="20.0" height="231.8" rx="2" fill="var(--good)"/><text x="97.0" y="288" class="axis" text-anchor="middle">Home</text><rect x="165.0" y="112.3" width="20.0" height="153.7" rx="2" fill="var(--bad)"/><text x="175.0" y="107.3" class="val" text-anchor="middle">61</text><rect x="188.0" y="46.8" width="20.0" height="219.2" rx="2" fill="var(--warn)"/><rect x="211.0" y="72.0" width="20.0" height="194.0" rx="2" fill="var(--info)"/><rect x="234.0" y="34.2" width="20.0" height="231.8" rx="2" fill="var(--good)"/><text x="211.0" y="288" class="axis" text-anchor="middle">SEO services</text><rect x="279.0" y="114.8" width="20.0" height="151.2" rx="2" fill="var(--bad)"/><text x="289.0" y="109.8" class="val" text-anchor="middle">60</text><rect x="302.0" y="31.6" width="20.0" height="234.4" rx="2" fill="var(--warn)"/><rect x="325.0" y="72.0" width="20.0" height="194.0" rx="2" fill="var(--info)"/><rect x="348.0" y="34.2" width="20.0" height="231.8" rx="2" fill="var(--good)"/><text x="325.0" y="288" class="axis" text-anchor="middle">WordPress design</text><rect x="393.0" y="167.7" width="20.0" height="98.3" rx="2" fill="var(--bad)"/><text x="403.0" y="162.7" class="val" text-anchor="middle">39</text><rect x="416.0" y="39.2" width="20.0" height="226.8" rx="2" fill="var(--warn)"/><rect x="439.0" y="72.0" width="20.0" height="194.0" rx="2" fill="var(--info)"/><rect x="462.0" y="34.2" width="20.0" height="231.8" rx="2" fill="var(--good)"/><text x="439.0" y="288" class="axis" text-anchor="middle">Minneapolis SEO</text><rect x="507.0" y="172.8" width="20.0" height="93.2" rx="2" fill="var(--bad)"/><text x="517.0" y="167.8" class="val" text-anchor="middle">37</text><rect x="530.0" y="39.2" width="20.0" height="226.8" rx="2" fill="var(--warn)"/><rect x="553.0" y="72.0" width="20.0" height="194.0" rx="2" fill="var(--info)"/><rect x="576.0" y="34.2" width="20.0" height="231.8" rx="2" fill="var(--good)"/><text x="553.0" y="288" class="axis" text-anchor="middle">About</text></svg><div class="legend"><span><i style="background:var(--bad)"></i>Performance</span><span><i style="background:var(--warn)"></i>Accessibility</span><span><i style="background:var(--info)"></i>Best practices</span><span><i style="background:var(--good)"></i>SEO</span><span><i class="dash"></i>Good threshold (90)</span></div><p class="cap">Lighthouse 13.5 · mobile preset, simulated throttling · lab run 20 October 2026. PSI/CrUX field data unavailable this run (rate limit / no API key).</p></div>
+<div><div class="tscroll"><table class="tbl"><thead><tr><th>Page</th><th class="num">Perf.</th><th class="num">LCP</th><th class="num">TBT</th></tr></thead><tbody><tr><td>Home</td><td class="num">47</td><td class="num bad">6.9 s</td><td class="num">0.9 s</td></tr><tr><td>SEO services</td><td class="num">61</td><td class="num warn">3.4 s</td><td class="num">1.1 s</td></tr><tr><td>WordPress design</td><td class="num">60</td><td class="num bad">7.7 s</td><td class="num">0.3 s</td></tr><tr><td>Minneapolis SEO</td><td class="num">39</td><td class="num bad">15.5 s</td><td class="num">1.1 s</td></tr><tr><td>About</td><td class="num">37</td><td class="num bad">15.4 s</td><td class="num">1.1 s</td></tr></tbody></table></div>
+<div class="callout bad"><b>Root cause</b>LCP is a Beaver Builder hero region. Marketing tags and Splide compete on the main thread; LCP image lacks fetchpriority=high.</div>
+<div class="callout"><b>Desktop is fine</b>Homepage desktop: performance 92, LCP 1.6 s, TBT 40 ms. Server response is acceptable — fix the front-end budget.</div></div>
+</div>
+<div class="split" style="margin-top:28px">
+<div class="panel"><h3>Weight opportunities on first load</h3>
+<div class="hbars"><div class="hb"><span class="hl" style="width:240px">Third-party tags (GTM/HubSpot/Clarity)</span><span class="ht"><span class="hf bad" style="width:52.5%"></span></span><span class="hv">~420 KB</span></div><div class="hb"><span class="hl" style="width:240px">Page-builder / theme JS (incl. Splide)</span><span class="ht"><span class="hf warn" style="width:35.0%"></span></span><span class="hv">~280 KB</span></div><div class="hb"><span class="hl" style="width:240px">Images (mobile savings opportunity)</span><span class="ht"><span class="hf bad" style="width:96.8%"></span></span><span class="hv">~774 KB</span></div><div class="hb"><span class="hl" style="width:240px">Homepage HTML document</span><span class="ht"><span class="hf bad" style="width:71.0%"></span></span><span class="hv">568 KB</span></div><div class="hb"><span class="hl" style="width:240px">Stylesheets</span><span class="ht"><span class="hf info" style="width:22.5%"></span></span><span class="hv">~180 KB</span></div></div>
+<div class="stats3" style="margin-top:16px"><div><b>~2.8 MB</b><span>mobile transfer</span></div><div><b>73</b><span>requests (home)</span></div><div><b>33</b><span>script tags (home HTML)</span></div></div></div>
+<div><h3>Recommended changes</h3><ul class="checks">
+<li><b>Delay HubSpot, Clarity, and non-critical GTM tags</b> until idle or first interaction.</li>
+<li><b>Stop Splide autoplay</b> above the fold on mobile, or replace with a static hero.</li>
+<li><b>LCP image first</b> — preload + fetchpriority=high; serve a properly sized AVIF/WebP.</li>
+<li><b>Trim Beaver Builder bloat</b> on money templates (sampled HTML 477–610 KB).</li></ul>
+<p class="cap">Target after fixes: mobile LCP under 2.5 s and TBT under 300 ms.</p></div>
+</div></div></section><section id="indexing" class="sec"><div class="wrap">
+<div class="kicker">Indexing</div><h2>Crawl and indexing health</h2>
+<div class="split"><div class="tscroll"><table class="tbl"><thead><tr><th>Check</th><th class="num">Result</th><th>Status</th></tr></thead><tbody><tr><td>URLs in Rank Math sitemap index</td><td class="num">289</td><td><span class="pill good">OK</span></td></tr><tr><td>Money templates with deep HTML + Lighthouse</td><td class="num">7 HTML · 5 LH</td><td><span class="pill good">OK</span></td></tr><tr><td>Homepage JSON-LD ProfessionalService graph</td><td class="num">Present</td><td><span class="pill good">OK</span></td></tr><tr><td>Self-canonical on home / about / contact</td><td class="num">Pass (sampled)</td><td><span class="pill good">OK</span></td></tr><tr><td>URLs canonicalizing to homepage</td><td class="num">1</td><td><span class="pill warn">Fix</span></td></tr><tr><td>Thin or missing meta descriptions (sampled)</td><td class="num">2</td><td><span class="pill warn">Fix</span></td></tr><tr><td>Pages with two H1s (sampled)</td><td class="num">2</td><td><span class="pill warn">Fix</span></td></tr><tr><td>Sampled pages without JSON-LD</td><td class="num">3</td><td><span class="pill warn">Fix</span></td></tr><tr><td>llms.txt as text/plain 200</td><td class="num">Fail</td><td><span class="pill warn">Fix</span></td></tr><tr><td>IndexNow key file</td><td class="num">Not configured</td><td><span class="pill info">Review</span></td></tr></tbody></table></div>
+<div><div class="stats3"><div><b>53</b><span>pages in page-sitemap</span></div><div><b>233</b><span>blog posts</span></div><div><b>3</b><span>case studies</span></div></div>
+<div class="callout bad"><b>Money URL points at home</b>The WordPress design service page is indexable (200) but tells Google the canonical is the homepage.</div>
+<div class="callout warn"><b>Thin metas</b>2 sampled trust/service URLs have missing or very short meta descriptions (exported in Downloads).</div></div></div></div></section><section id="full-crawl" class="sec alt"><div class="wrap">
+<div class="kicker">Sitemap inventory · 289 URLs</div><h2>What the deep pass confirmed</h2>
+<p class="intro">We inventoried all 289 URLs in the Rank Math sitemap index, ran Lighthouse on 5 money templates,
+and deep-parsed 7 saved HTML captures for title, meta, H1, canonical, and JSON-LD.
+Cloudflare intermittently blocked bulk automated re-fetches (403/202), so corpus-wide counts below are from sitemap inventory
+plus verified template evidence — not a fabricated full-site HTTP pass.</p>
+<div class="stats4"><div><b>289</b><span>sitemap URLs</span></div><div class="good"><b>5</b><span>Lighthouse templates</span></div>
+<div class="bad"><b>1</b><span>canonical → home</span></div><div class="warn"><b>3</b><span>sampled no JSON-LD</span></div></div>
+<div class="findings"><div class="finding"><div><span class="pill bad">High</span></div><div><h4>Service URL canonicalizes to homepage</h4><p class="urls">https://themightymo.com/wordpress-website-design-services/</p><p><b>Fix:</b> Self-canonical + unique title/H1/meta for WordPress design intent</p></div></div><div class="finding"><div><span class="pill bad">High</span></div><div><h4>Mobile lab LCP is poor on money templates</h4><p class="urls">Home 6.9 s; SEO services 3.4 s; WordPress design 7.7 s; Minneapolis SEO 15.5 s; About 15.4 s</p><p><b>Fix:</b> Defer HubSpot/Clarity/GTM/Splide; optimize LCP image; fetchpriority=high</p></div></div><div class="finding"><div><span class="pill bad">High</span></div><div><h4>No FAQ / answer-first blocks; llms.txt not served as text/plain 200</h4><p class="urls">https://themightymo.com/ ; https://themightymo.com/llms.txt</p><p><b>Fix:</b> Add FAQ + FAQPage; publish /llms.txt as text/plain</p></div></div><div class="finding"><div><span class="pill warn">Medium</span></div><div><h4>Geo / service templates missing ProfessionalService JSON-LD</h4><p class="urls">/seo-services/minneapolis/ and related geo landings</p><p><b>Fix:</b> Add LocalBusiness/ProfessionalService + areaServed on geo pages</p></div></div><div class="finding"><div><span class="pill warn">Medium</span></div><div><h4>Thin meta descriptions on trust pages</h4><p class="urls">/about-us/ ; /customer-success-stories/</p><p><b>Fix:</b> Write 140–160 character benefit-led metas</p></div></div><div class="finding"><div><span class="pill warn">Medium</span></div><div><h4>Dual H1 and grammar issues on SEO services</h4><p class="urls">/seo-services/ ; /seo-services/minneapolis/</p><p><b>Fix:</b> One H1; fix &#x27;SEO services is&#x27; copy</p></div></div><div class="finding"><div><span class="pill warn">Medium</span></div><div><h4>GeoCoordinates longitude has leading space; GBP missing from sameAs</h4><p class="urls">Homepage JSON-LD Organization</p><p><b>Fix:</b> Trim longitude; add GBP URL; consider AggregateRating if eligible</p></div></div><div class="finding"><div><span class="pill info">Low</span></div><div><h4>Thin or missing meta on 2 sitemap URLs</h4><p class="urls">See crawl CSV sample</p><p><b>Fix:</b> Batch-rewrite Rank Math metas under 40 characters</p></div></div></div>
+<ul class="checks" style="margin-top:18px"><b>URLs that canonicalize to the homepage</b><li><code>https://themightymo.com/wordpress-website-design-services/</code></li></ul></div></section><section id="schema" class="sec"><div class="wrap">
+<div class="kicker">Structured data</div><h2>Strong homepage graph; weak geo/FAQ coverage</h2>
+<div class="split"><div>
+<ul class="checks">
+<li><b>Homepage:</b> ProfessionalService + Organization, Place, PostalAddress, GeoCoordinates, OfferCatalog, WebSite SearchAction.</li>
+<li><b>Bug:</b> GeoCoordinates <code>longitude</code> includes a leading space (<code>' -93.2316'</code>).</li>
+<li><b>Gap:</b> Minneapolis / St Paul SEO templates lack the ProfessionalService graph.</li>
+<li><b>Gap:</b> No FAQPage, no AggregateRating / Review nodes despite Trustindex Google reviews.</li>
+</ul></div>
+<div class="callout"><b>Priority schema work</b>Fix the WordPress design canonical first (indexation), then geo JSON-LD, then FAQPage for AEO citations. Review markup only if Google guidelines for the review source are met.</div></div></div></section><section id="trust" class="sec alt"><div class="wrap">
+<div class="kicker">Trust</div><h2>Trust signals (E-E-A-T)</h2>
+<div class="split"><div class="panel"><h3>Checks passed by category · 37 of 55</h3>
+<div class="hbars"><div class="hb"><span class="hl" style="width:170px">Authority &amp; NAP</span><span class="ht"><span class="hf good" style="width:90.0%"></span></span><span class="hv">9/10</span></div><div class="hb"><span class="hl" style="width:170px">Homepage schema</span><span class="ht"><span class="hf good" style="width:80.0%"></span></span><span class="hv">8/10</span></div><div class="hb"><span class="hl" style="width:170px">Reviews / proof</span><span class="ht"><span class="hf warn" style="width:70.0%"></span></span><span class="hv">7/10</span></div><div class="hb"><span class="hl" style="width:170px">About / people</span><span class="ht"><span class="hf warn" style="width:66.7%"></span></span><span class="hv">6/9</span></div><div class="hb"><span class="hl" style="width:170px">AI discovery files</span><span class="ht"><span class="hf bad" style="width:25.0%"></span></span><span class="hv">2/8</span></div><div class="hb"><span class="hl" style="width:170px">Legal / SMS readiness</span><span class="ht"><span class="hf warn" style="width:62.5%"></span></span><span class="hv">5/8</span></div></div>
+<p class="cap">Scored from on-page NAP, schema, About, reviews, and AI discovery files</p></div>
+<div><h3>Gaps worth closing</h3><ul class="checks">
+<li><b>GBP missing from Organization sameAs</b> (social profiles present).</li>
+<li><b>Founding year inconsistency</b> — schema 2007 vs some About/external cues of 2004.</li>
+<li><b>Reviews visible via Trustindex</b> without AggregateRating (or clear GBP rating CTA).</li>
+<li><b>Person / author schema</b> thin for an agency that sells expertise.</li>
+<li><b>wp-login.php publicly reachable (200)</b> — harden at the edge.</li></ul></div></div></div></section><section id="aeo" class="sec"><div class="wrap">
+<div class="kicker">AI search readiness</div><h2>Search bots can fetch; citation surfaces are thin</h2>
+<div class="split"><div>
+<div class="stats3"><div><b>67</b><span>GEO readiness score</span></div><div class="good"><b>200</b><span>OAI / Claude search bots</span></div><div class="warn"><b>403</b><span>GPTBot / ClaudeBot training</span></div></div>
+<ul class="checks">
+<li><b>Citability:</b> Narrative homepage without short answer blocks or FAQPage.</li>
+<li><b>llms.txt:</b> Not available as text/plain 200 (403/HTML fallback observed).</li>
+<li><b>knowsAbout + sameAs</b> help entity clarity; add GBP and FAQ answers for AI Overviews / ChatGPT search.</li>
+</ul></div>
+<div class="callout warn"><b>Do this next for AEO</b>Publish FAQ answers clients actually ask (pricing model, timelines, WordPress vs rebuild, SEO process) and a concise llms.txt pointing at money URLs and NAP.</div></div></div></section><section id="content" class="sec alt"><div class="wrap">
+<div class="kicker">Content</div><h2>Clear positioning; thin trust-page metas</h2>
+<div class="split"><div>
+<ul class="checks">
+<li><b>Homepage</b> targets Minneapolis web design / WordPress / SEO with case-study proof.</li>
+<li><b>Blog corpus</b> is large (233 posts) — opportunity and hygiene risk.</li>
+<li><b>Case studies</b> are few (3 in sitemap) relative to AEO citation needs.</li>
+<li><b>About / Success Stories</b> metas are placeholders, not SERP copy.</li>
+</ul></div>
+<div class="panel"><h3>On-page defects (sampled)</h3>
+<div class="hbars"><div class="hb"><span class="hl" style="width:200px">Canonical → home (critical)</span><span class="ht"><span class="hf bad" style="width:100.0%"></span></span><span class="hv">1+ URL</span></div><div class="hb"><span class="hl" style="width:200px">Thin metas (crawl)</span><span class="ht"><span class="hf warn" style="width:2.0%"></span></span><span class="hv">2</span></div><div class="hb"><span class="hl" style="width:200px">Dual H1 pages</span><span class="ht"><span class="hf warn" style="width:40.0%"></span></span><span class="hv">2</span></div><div class="hb"><span class="hl" style="width:200px">No JSON-LD pages</span><span class="ht"><span class="hf warn" style="width:3.0%"></span></span><span class="hv">3</span></div></div>
+<p class="cap">Bars are relative severity markers, not absolute percentages of the site.</p></div></div></div></section><section id="actions" class="sec"><div class="wrap">
+<div class="kicker">Action plan</div><h2>Remaining actions</h2><div class="tscroll"><table class="tbl"><thead><tr><th>Priority</th><th>Area</th><th>Issue</th><th>Fix</th></tr></thead><tbody><tr><td><span class="pill warn">Medium</span></td><td>Schema</td><td><b>GeoCoordinates longitude leading space</b></td><td>Trim to numeric string in Rank Math / custom schema.</td></tr><tr><td><span class="pill warn">Medium</span></td><td>Local</td><td><b>No AggregateRating despite Trustindex reviews</b></td><td>Eligible review markup or prominent GBP rating link.</td></tr><tr><td><span class="pill warn">Medium</span></td><td>Security</td><td><b>wp-login.php returns 200</b></td><td>Cloudflare WAF rate limit / CAPTCHA; enforce 2FA.</td></tr><tr><td><span class="pill warn">Medium</span></td><td>Performance</td><td><b>~774 KB image savings (LH)</b></td><td>Serve sized AVIF/WebP; lazy-load below-fold.</td></tr><tr><td><span class="pill info">Low</span></td><td>Content</td><td><b>233 blog posts need hygiene</b></td><td>Noindex/consolidate thin/outdated posts; refresh money posts.</td></tr><tr><td><span class="pill info">Low</span></td><td>Trust</td><td><b>Founding year 2004 vs 2007 inconsistency</b></td><td>Pick one year across About, schema, directories.</td></tr><tr><td><span class="pill info">Low</span></td><td>Technical</td><td><b>No CSP on public HTML</b></td><td>Roll out report-only CSP compatible with GTM/Clarity.</td></tr><tr><td><span class="pill info">Low</span></td><td>Technical</td><td><b>cf-cache-status DYNAMIC on HTML</b></td><td>Enable anonymous HTML edge cache where forms allow.</td></tr></tbody></table></div></div></section><section id="roadmap" class="sec alt"><div class="wrap">
+<div class="kicker">Next steps</div><h2>Suggested roadmap</h2><div class="roadmap"><div class="phase"><div class="ph-when">Week 1</div><div class="ph-name">Quick wins</div><ul><li>Self-canonical + unique on-page for WordPress design URL</li><li>One H1 + grammar fixes on SEO services</li><li>Rewrite About and Success Stories metas</li><li>Trim GeoCoordinates longitude; add GBP to sameAs</li></ul></div><div class="phase"><div class="ph-when">Weeks 2–3</div><div class="ph-name">Speed and AI</div><ul><li>Defer HubSpot / Clarity / GTM; fix mobile LCP image</li><li>FAQ + FAQPage on Home and SEO Services</li><li>Publish /llms.txt as 200 text/plain</li><li>ProfessionalService JSON-LD on geo landings</li></ul></div><div class="phase"><div class="ph-when">Month 2</div><div class="ph-name">Content &amp; monitoring</div><ul><li>Blog hygiene for 233 posts; expand measurable case studies</li><li>Review / AggregateRating strategy</li><li>Harden wp-login; optional IndexNow</li><li>Re-test Lighthouse + connect GSC/CrUX</li></ul></div></div><p class="cap center">Estimate for one WordPress-capable developer. Re-audit after Month 2 with GSC + CrUX access.</p></div></section><section id="method" class="sec"><div class="wrap">
+<div class="kicker">Strengths &amp; method</div><h2>What is already working, and how we measured</h2>
+<div class="wgrid"><div class="wk"><b>289</b><span>URLs in Rank Math sitemap index</span></div><div class="wk"><b>92</b><span>desktop Performance on the homepage</span></div><div class="wk"><b>92</b><span>Lighthouse SEO on the homepage</span></div><div class="wk"><b>0</b><span>missing alt attributes on homepage images</span></div><div class="wk"><b>233</b><span>blog posts in post sitemaps</span></div><div class="wk"><b>3</b><span>case-study URLs in sitemap</span></div><div class="wk"><b>5</b><span>mobile Lighthouse templates measured</span></div><div class="wk"><b>Search AI bots</b><span>Googlebot / OAI-SearchBot / Claude-SearchBot 200</span></div></div>
+<div class="method"><div><h3>Method</h3><p>Full inventory of 289 Rank Math sitemap URLs from XML. Deep HTML parse on 7 money templates
+(title, meta, H1, canonical, JSON-LD). Specialist findings for technical, on-page, schema, local, performance, GEO/AEO, content, and visuals.
+Lighthouse 13.5 mobile on 5 templates; desktop baseline on the homepage. Cloudflare blocked bulk curl/Playwright re-crawls mid-session;
+Lighthouse Chromium and earlier HTML captures were used as the verified evidence set.</p></div>
+<div><h3>Not covered</h3><p>Backlinks, rankings, Google Business Profile dashboard access, Search Console coverage, and real-user CrUX.
+Speed figures are lab measurements — confirm in Search Console Core Web Vitals when access is available.</p></div></div></div></section><section id="downloads" class="sec"><div class="wrap">
+<div class="kicker">Files</div><h2>Downloads</h2><div class="dls"><a class="dl" href="files/The-Mighty-Mo-SEO-Audit-Full-Report.md" download><span class="dl-ic">MD</span><span><b>Detailed written report</b><small>Full narrative · Markdown</small></span></a><a class="dl" href="files/The-Mighty-Mo-SEO-Action-Plan.md" download><span class="dl-ic">MD</span><span><b>Action plan</b><small>4 phases · Markdown</small></span></a><a class="dl" href="files/themightymo-full-crawl-findings.csv" download><span class="dl-ic">CSV</span><span><b>Priority findings</b><small>Crawl + LH issues · CSV</small></span></a><a class="dl" href="files/thin-meta-urls.csv" download><span class="dl-ic">CSV</span><span><b>Thin meta sample</b><small>URLs needing meta rewrites · CSV</small></span></a><a class="dl" href="files/audit-data.json" download><span class="dl-ic">JSON</span><span><b>Machine-readable scores</b><small>Category scores · JSON</small></span></a><a class="dl" href="files/lighthouse-summary.json" download><span class="dl-ic">JSON</span><span><b>Lighthouse summary</b><small>5 templates · JSON</small></span></a></div></div></section></main>
+<footer class="site"><div class="wrap"><span>The Mighty Mo! Design Co. · Full SEO Audit · 20 October 2026</span><span>Confidential. Prepared by Northline Search for internal review.</span></div></footer>
+<script>
+const links=[...document.querySelectorAll('.navbar nav a')];
+const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+en.target.id));}}),{rootMargin:'-45% 0px -50% 0px'});
+document.querySelectorAll('section.sec').forEach(s=>io.observe(s));
+</script></body></html>

@@ -1,0 +1,9 @@
+priority,finding,urls,fix
+High,Service URL canonicalizes to homepage,https://themightymo.com/wordpress-website-design-services/,Self-canonical + unique title/H1/meta for WordPress design intent
+High,Mobile lab LCP is poor on money templates,Home 6.9 s; SEO services 3.4 s; WordPress design 7.7 s; Minneapolis SEO 15.5 s; About 15.4 s,Defer HubSpot/Clarity/GTM/Splide; optimize LCP image; fetchpriority=high
+High,No FAQ / answer-first blocks; llms.txt not served as text/plain 200,https://themightymo.com/ ; https://themightymo.com/llms.txt,Add FAQ + FAQPage; publish /llms.txt as text/plain
+Medium,Geo / service templates missing ProfessionalService JSON-LD,/seo-services/minneapolis/ and related geo landings,Add LocalBusiness/ProfessionalService + areaServed on geo pages
+Medium,Thin meta descriptions on trust pages,/about-us/ ; /customer-success-stories/,Write 140–160 character benefit-led metas
+Medium,Dual H1 and grammar issues on SEO services,/seo-services/ ; /seo-services/minneapolis/,One H1; fix 'SEO services is' copy
+Medium,GeoCoordinates longitude has leading space; GBP missing from sameAs,Homepage JSON-LD Organization,Trim longitude; add GBP URL; consider AggregateRating if eligible
+Low,Thin or missing meta on 2 sitemap URLs,See crawl CSV sample,Batch-rewrite Rank Math metas under 40 characters

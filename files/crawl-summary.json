@@ -1,0 +1,36 @@
+{
+  "urls": 289,
+  "http_200": 289,
+  "sitemap_inventory_only": true,
+  "deep_html_templates": 7,
+  "lighthouse_templates": 5,
+  "redirected_final": 0,
+  "thin_or_missing_meta": 2,
+  "dual_h1": 2,
+  "no_h1": 0,
+  "no_jsonld": 3,
+  "canonical_to_home": [
+    "https://themightymo.com/wordpress-website-design-services/"
+  ],
+  "thin_meta_sample": [
+    {
+      "url": "https://themightymo.com/about-us/",
+      "title": "About Us",
+      "meta": "About Us"
+    },
+    {
+      "url": "https://themightymo.com/customer-success-stories/",
+      "title": "Customer Success Stories",
+      "meta": "Customer Success Stories"
+    }
+  ],
+  "notes": "Rank Math sitemap inventory counted from local XML. Deep HTML on money templates from successful captures. Cloudflare returned 403/202 on bulk automated re-crawl; Lighthouse Chromium successfully measured 5 templates.",
+  "breakdown": {
+    "pages": 53,
+    "posts": 233,
+    "case_studies": 3,
+    "total": 289
+  },
+  "verified_html_200": 7,
+  "lighthouse_ok": 5
+}

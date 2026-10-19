@@ -1,0 +1,242 @@
+{
+  "summary": {
+    "health_score": 72,
+    "business_type": "Hybrid local ProfessionalService / B2B web design agency (Minneapolis)",
+    "url": "https://themightymo.com/",
+    "audit_date": "2026-10-20",
+    "top_findings": [
+      "Mobile Lighthouse Performance 47 with LCP 6.9s (desktop 92 / LCP 1.6s)",
+      "/wordpress-website-design-services/ canonicalizes to the homepage",
+      "No FAQ / answer-first blocks; /llms.txt returns 403",
+      "Geo and some service templates lack JSON-LD despite strong homepage schema",
+      "Thin metas on About and Customer Success Stories"
+    ],
+    "quick_wins": [
+      "Self-canonical + unique title/H1 on WordPress design service page",
+      "Rewrite About and Success Stories meta descriptions",
+      "Fix 'SEO services is' grammar on SEO landing metas",
+      "Defer HubSpot/Clarity/Splide autoplay on mobile",
+      "Add FAQPage schema + publish llms.txt as 200 text/plain"
+    ]
+  },
+  "categories": [
+    {
+      "name": "Technical SEO",
+      "score": 84,
+      "what_works": [
+        "HTTPS apex canonical with www/http 301s",
+        "robots.txt + Rank Math sitemap_index (289 URLs)",
+        "Brotli, HSTS, baseline security headers",
+        "Server-rendered WordPress (not SPA)"
+      ],
+      "findings": [
+        {
+          "title": "Heavy homepage HTML and script count",
+          "severity": "Medium",
+          "description": "Homepage HTML ~568 KB with 33 script tags; cf-cache-status DYNAMIC.",
+          "recommendation": "Defer non-critical JS, audit third-party tags, enable anonymous HTML caching where safe."
+        },
+        {
+          "title": "wp-login.php publicly reachable",
+          "severity": "Medium",
+          "description": "HEAD /wp-login.php returns 200; wp-admin returns 403.",
+          "recommendation": "Cloudflare WAF rate limit / CAPTCHA on wp-login; enforce 2FA."
+        }
+      ]
+    },
+    {
+      "name": "Content Quality",
+      "score": 72,
+      "what_works": [
+        "Substantive homepage agency positioning",
+        "Case-study and testimonial proof points",
+        "Trustindex Google reviews on success stories page"
+      ],
+      "findings": [
+        {
+          "title": "Founding year inconsistency",
+          "severity": "Medium",
+          "description": "Schema foundingDate year 2007 vs some external/about cues of 2004.",
+          "recommendation": "Standardize one founding year across site, schema, and directories."
+        },
+        {
+          "title": "Large blog corpus needs hygiene",
+          "severity": "Low",
+          "description": "233 post URLs in sitemaps including older technical posts.",
+          "recommendation": "Audit for thin/outdated posts; noindex or consolidate; refresh money pages."
+        }
+      ]
+    },
+    {
+      "name": "On-Page SEO",
+      "score": 68,
+      "what_works": [
+        "Homepage title/meta/H1 aligned to Minneapolis web design",
+        "Self-canonicals on home, about, contact, Minneapolis SEO"
+      ],
+      "findings": [
+        {
+          "title": "Service page canonicalized to homepage",
+          "severity": "High",
+          "description": "/wordpress-website-design-services/ returns 200 but canonical and title match the homepage.",
+          "recommendation": "Unique title, meta, H1, and self-referencing canonical on that URL."
+        },
+        {
+          "title": "Dual H1 on SEO services hub",
+          "severity": "Medium",
+          "description": "/seo-services/ exposes two H1 elements.",
+          "recommendation": "Keep one H1; demote the second to H2."
+        },
+        {
+          "title": "Thin meta descriptions",
+          "severity": "Medium",
+          "description": "About meta is 'About Us'; Success Stories meta is 'Customer Success Stories'.",
+          "recommendation": "Write 140–160 character benefit-led descriptions."
+        }
+      ]
+    },
+    {
+      "name": "Schema / Structured Data",
+      "score": 80,
+      "what_works": [
+        "Homepage ProfessionalService + Organization + OfferCatalog",
+        "Place / PostalAddress / GeoCoordinates present",
+        "WebSite SearchAction"
+      ],
+      "findings": [
+        {
+          "title": "GeoCoordinates longitude leading space",
+          "severity": "Medium",
+          "description": "longitude value includes a leading space in JSON-LD.",
+          "recommendation": "Trim to a clean numeric string in Rank Math / custom schema."
+        },
+        {
+          "title": "Missing JSON-LD on geo templates",
+          "severity": "Medium",
+          "description": "Minneapolis SEO and similar geo pages lack ProfessionalService JSON-LD.",
+          "recommendation": "Add LocalBusiness/ProfessionalService + areaServed on geo landings."
+        }
+      ]
+    },
+    {
+      "name": "Performance (CWV)",
+      "score": 55,
+      "what_works": [
+        "Desktop Lighthouse Performance 92, LCP 1.6s",
+        "CLS good on mobile and desktop"
+      ],
+      "findings": [
+        {
+          "title": "Mobile LCP 6.9s / Performance 47",
+          "severity": "High",
+          "description": "Lighthouse mobile: LCP 6870ms, TBT 910ms, ~2.8 MiB transfer; PSI rate-limited so no field CrUX this run.",
+          "recommendation": "Reduce JS bootup (Splide, HubSpot, Clarity, GTM), optimize LCP image, defer third parties."
+        }
+      ]
+    },
+    {
+      "name": "AI Search Readiness",
+      "score": 67,
+      "what_works": [
+        "Organization knowsAbout + social sameAs",
+        "Search-oriented AI crawlers returned 200 in GEO tests"
+      ],
+      "findings": [
+        {
+          "title": "llms.txt unavailable (403)",
+          "severity": "High",
+          "description": "/llms.txt and variants returned 403 HTML, not a plain-text discovery file.",
+          "recommendation": "Publish text/plain llms.txt summarizing services, NAP, and key URLs."
+        },
+        {
+          "title": "No FAQ / answer-first homepage structure",
+          "severity": "High",
+          "description": "Homepage is narrative; no FAQPage schema for citability.",
+          "recommendation": "Add short direct-answer FAQs on Home and SEO Services with FAQPage JSON-LD."
+        }
+      ]
+    },
+    {
+      "name": "Images",
+      "score": 88,
+      "what_works": [
+        "Homepage 12 images with 0 missing alt attributes"
+      ],
+      "findings": [
+        {
+          "title": "Image weight still a mobile opportunity",
+          "severity": "Medium",
+          "description": "Lighthouse estimated ~774 KB image delivery savings on mobile.",
+          "recommendation": "Serve properly sized AVIF/WebP; lazy-load below-fold images."
+        }
+      ]
+    },
+    {
+      "name": "Local SEO",
+      "score": 74,
+      "what_works": [
+        "Consistent phone and address across footer and homepage schema",
+        "Google Maps embed with place context"
+      ],
+      "findings": [
+        {
+          "title": "No GBP URL in Organization sameAs",
+          "severity": "Medium",
+          "description": "sameAs lists social profiles but not Google Business Profile.",
+          "recommendation": "Add Maps / g.page URL to sameAs; keep NAP identical to GBP."
+        },
+        {
+          "title": "Reviews without AggregateRating schema",
+          "severity": "Medium",
+          "description": "Trustindex Google reviews on success stories; no review structured data.",
+          "recommendation": "Add eligible review/aggregate markup or clear GBP link with visible rating."
+        }
+      ]
+    }
+  ],
+  "action_plan": {
+    "phases": [
+      {
+        "name": "Phase 1: Critical Fixes",
+        "timeframe": "Week 1",
+        "items": [
+          "Fix WordPress design page canonical and unique on-page",
+          "Mobile performance sprint (LCP/JS third parties)",
+          "Single H1 + grammar fixes on SEO services"
+        ]
+      },
+      {
+        "name": "Phase 2: High-Impact Improvements",
+        "timeframe": "Weeks 2-3",
+        "items": [
+          "FAQ + FAQPage; llms.txt 200; geo JSON-LD",
+          "GBP in sameAs; review schema; fix geo longitude",
+          "Rewrite thin metas"
+        ]
+      },
+      {
+        "name": "Phase 3: Content & Authority",
+        "timeframe": "Month 2",
+        "items": [
+          "Blog hygiene for 233 posts",
+          "Expand measurable case studies",
+          "Person/author schema; founding year consistency"
+        ]
+      },
+      {
+        "name": "Phase 4: Monitoring & Iteration",
+        "timeframe": "Ongoing",
+        "items": [
+          "GSC/GA4 access",
+          "Monthly Lighthouse + CrUX",
+          "Rank tracking for Minneapolis agency terms"
+        ]
+      }
+    ]
+  },
+  "artifacts": {
+    "findings_dir": "findings/",
+    "screenshots_dir": "screenshots/",
+    "raw_dir": "raw/"
+  }
+}
